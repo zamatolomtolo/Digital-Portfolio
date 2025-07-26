@@ -234,7 +234,7 @@ section {
 .title {
   font-size: 3rem;
   color: var(--primary-green);
-  text-align: center; /* Center headings */
+  text-align: center;
 }
 
 #socials-container {
@@ -338,25 +338,28 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
-  text-align: center; /* Center headings */
+  text-align: center;
 }
 
 .experience-details-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  color: var(--text-dark);
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* DETAILS CONTAINER - THIS FIXES EXPERIENCE LAYOUT */
 .details-container {
-  padding: 1.5rem;
-  flex: 1;
+  padding: 1rem;
+  flex: 1 1 280px;
+  max-width: 320px;
   background-color: var(--pastel-bg);
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   border: 0.1rem solid var(--border-grey);
   text-align: center;
   color: var(--text-dark);
+  box-sizing: border-box;
 }
 
 /* ARTICLES */
@@ -399,7 +402,7 @@ article .icon {
 .project-title {
   margin: 1rem 0;
   color: var(--text-dark);
-  text-align: center; /* Center headings */
+  text-align: center;
 }
 
 .project-btn {
@@ -448,6 +451,33 @@ article .icon {
   height: 2.5rem;
 }
 
+/* QUESTIONS SECTION - vertical stacked */
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 600px;
+}
+
+.question-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--pastel-bg);
+  padding: 1rem;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  flex-wrap: nowrap;
+}
+
+.question-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
 /* FOOTER SECTION */
 footer {
   height: 26vh;
@@ -466,57 +496,57 @@ footer p {
 
 /* SOFT DARK MODE THEME */
 body.dark-mode {
-  background-color: #121212;        /* Very dark but soft black */
-  color: #e0e0e0;                   /* Light gray text */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 body.dark-mode nav,
 body.dark-mode footer {
-  background-color: #1e1e1e;        /* Dark gray */
-  color: #cccccc;                   /* Soft light gray */
+  background-color: #1e1e1e;
+  color: #cccccc;
 }
 
 body.dark-mode .logo {
-  color: #cccccc;                   /* Soft light gray */
+  color: #cccccc;
 }
 
 body.dark-mode .nav-links a {
-  color: #bbbbbb;                   /* Muted light gray */
+  color: #bbbbbb;
 }
 
 body.dark-mode .nav-links a:hover {
-  color: #dddddd;                   /* Slightly brighter gray */
+  color: #dddddd;
   text-decoration-color: #dddddd;
 }
 
 body.dark-mode section {
-  background-color: #1a1a1a;        /* Dark gray background */
+  background-color: #1a1a1a;
 }
 
 body.dark-mode a {
-  color: #aabbcc;                   /* Soft muted blue */
+  color: #aabbcc;
   text-decoration-color: #aabbcc;
 }
 
 body.dark-mode a:hover {
-  color: #cddcee;                   /* Slightly lighter soft blue */
+  color: #cddcee;
   text-decoration-color: #cddcee;
 }
 
 body.dark-mode .icon {
-  color: #8899aa;                   /* Muted bluish gray */
+  color: #8899aa;
 }
 
 /* Buttons */
 body.dark-mode .btn-color-1,
 body.dark-mode .btn-color-2:hover {
-  background-color: #444444;        /* Medium gray */
-  color: #eeeeee;                   /* Light text */
-  border-color: #666666;            /* Slightly lighter gray border */
+  background-color: #444444;
+  color: #eeeeee;
+  border-color: #666666;
 }
 
 body.dark-mode .btn-color-1:hover {
-  background-color: #666666;        /* Slightly lighter gray */
+  background-color: #666666;
   color: #eeeeee;
 }
 
@@ -562,8 +592,8 @@ body.dark-mode .hamburger-icon span {
 body.dark-mode .contact-info-upper-container,
 body.dark-mode .details-container,
 body.dark-mode .color-container {
-  background-color: #222222;         /* Slightly lighter than section bg */
-  border: 0.1rem solid #444444;      /* Soft, uniform dark gray border */
+  background-color: #222222;
+  border: 0.1rem solid #444444;
   color: #dddddd;
 }
 
@@ -577,8 +607,130 @@ body.dark-mode h3,
 body.dark-mode h4, 
 body.dark-mode h5, 
 body.dark-mode h6 {
-  color: #dddddd; /* soft off-white for headings */
+  color: #dddddd;
   text-align: center;
   font-weight: 600;
   margin: 1rem 0;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+  }
+}
+/* DARK MODE: QUESTIONS SECTION FIX */
+body.dark-mode .questions-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .question-item {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .question-item p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .question-item img {
+  filter: brightness(0.85);
 }
