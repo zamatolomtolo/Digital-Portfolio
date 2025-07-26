@@ -316,7 +316,7 @@ section {
 }
 
 .about-details-container p {
-  color: var(--text-dark);
+  color: var(--text-light);
   font-size: 1.25rem;
   line-height: 1.5;
 }
