@@ -234,6 +234,7 @@ section {
 .title {
   font-size: 3rem;
   color: var(--primary-green);
+  text-align: center; /* Center headings */
 }
 
 #socials-container {
@@ -337,6 +338,7 @@ section {
   font-weight: 600;
   font-size: 1.75rem;
   margin-bottom: 2rem;
+  text-align: center; /* Center headings */
 }
 
 .experience-details-container {
@@ -397,6 +399,7 @@ article .icon {
 .project-title {
   margin: 1rem 0;
   color: var(--text-dark);
+  text-align: center; /* Center headings */
 }
 
 .project-btn {
@@ -463,94 +466,119 @@ footer p {
 
 /* SOFT DARK MODE THEME */
 body.dark-mode {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: #121212;        /* Very dark but soft black */
+  color: #e0e0e0;                   /* Light gray text */
 }
 
 body.dark-mode nav,
 body.dark-mode footer {
-  background-color: #2a2a2a;
-  color: #c7dab5;
+  background-color: #1e1e1e;        /* Dark gray */
+  color: #cccccc;                   /* Soft light gray */
 }
 
 body.dark-mode .logo {
-  color: #c7dab5;
+  color: #cccccc;                   /* Soft light gray */
 }
 
 body.dark-mode .nav-links a {
-  color: #dce8c4;
+  color: #bbbbbb;                   /* Muted light gray */
 }
 
 body.dark-mode .nav-links a:hover {
-  color: #f0f8d7;
-  text-decoration-color: #f0f8d7;
+  color: #dddddd;                   /* Slightly brighter gray */
+  text-decoration-color: #dddddd;
 }
 
 body.dark-mode section {
-  background-color: #242424;
+  background-color: #1a1a1a;        /* Dark gray background */
 }
 
 body.dark-mode a {
-  color: #c5e4b5;
-  text-decoration-color: #c5e4b5;
+  color: #aabbcc;                   /* Soft muted blue */
+  text-decoration-color: #aabbcc;
+}
+
+body.dark-mode a:hover {
+  color: #cddcee;                   /* Slightly lighter soft blue */
+  text-decoration-color: #cddcee;
 }
 
 body.dark-mode .icon {
-  color: #bfe3a2;
+  color: #8899aa;                   /* Muted bluish gray */
 }
 
+/* Buttons */
 body.dark-mode .btn-color-1,
 body.dark-mode .btn-color-2:hover {
-  background-color: #6a9e6f;
-  color: #1e1e1e;
-  border-color: #a9d28e;
+  background-color: #444444;        /* Medium gray */
+  color: #eeeeee;                   /* Light text */
+  border-color: #666666;            /* Slightly lighter gray border */
 }
 
 body.dark-mode .btn-color-1:hover {
-  background-color: #bde1a3;
-  color: #1e1e1e;
+  background-color: #666666;        /* Slightly lighter gray */
+  color: #eeeeee;
 }
 
 body.dark-mode .btn-color-2 {
-  color: #a9d28e;
-  border-color: #a9d28e;
+  color: #bbbbbb;
+  border-color: #bbbbbb;
 }
 
 body.dark-mode .btn-color-2:hover {
-  color: #f0f8d7;
-  border-color: #f0f8d7;
+  color: #dddddd;
+  border-color: #dddddd;
 }
 
+/* Dark mode toggle button */
 body.dark-mode #dark-mode-toggle {
-  border-color: #a9d28e;
-  color: #a9d28e;
+  border-color: #bbbbbb;
+  color: #bbbbbb;
   background-color: transparent;
 }
 
 body.dark-mode #dark-mode-toggle:hover,
 body.dark-mode #dark-mode-toggle:focus {
-  background-color: #a9d28e;
-  color: #1e1e1e;
-  border-color: #f0f8d7;
-  box-shadow: 0 0 6px #f0f8d7;
+  background-color: #bbbbbb;
+  color: #121212;
+  border-color: #dddddd;
+  box-shadow: 0 0 6px #dddddd;
 }
 
-/* DARK MODE SUPPORT FOR MOBILE MENU */
+/* Mobile menu */
 body.dark-mode .menu-links {
-  background-color: #2a2a2a;
+  background-color: #1e1e1e;
 }
 
 body.dark-mode .menu-links a {
-  color: #dce8c4;
+  color: #bbbbbb;
 }
 
 body.dark-mode .hamburger-icon span {
-  background-color: #dce8c4;
+  background-color: #bbbbbb;
 }
 
-/* BORDERS FOR DARK MODE CARDS */
+/* SOFT, UNIFORM BOXES & BORDERS for DARK MODE */
 body.dark-mode .contact-info-upper-container,
 body.dark-mode .details-container,
 body.dark-mode .color-container {
-  border-color: #445544;
+  background-color: #222222;         /* Slightly lighter than section bg */
+  border: 0.1rem solid #444444;      /* Soft, uniform dark gray border */
+  color: #dddddd;
+}
+
+/* Center all headings uniformly in dark mode too */
+body.dark-mode .title,
+body.dark-mode .experience-sub-title,
+body.dark-mode .project-title,
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+  color: #dddddd; /* soft off-white for headings */
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem 0;
 }
